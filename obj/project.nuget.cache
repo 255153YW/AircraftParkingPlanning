@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "pwkY2cOG2S8IY4Hd9f0z7sGKHreKCV0OhL7Dbzw8IZbiV0QZoi4xjCchaTUVyEbrWcXHkAPUA4u3wilxG0BlJw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Yohandi\\Desktop\\AircraftParkingPlanningAssignment\\AircraftParkingPlanningAssignment\\AircraftParkingPlanning\\AircraftParkingPlanning.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yohandi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Yohandi\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Yohandi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Yohandi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Yohandi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Yohandi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
