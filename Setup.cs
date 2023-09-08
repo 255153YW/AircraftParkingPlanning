@@ -1,5 +1,4 @@
 ﻿using AircraftParkingPlanning.Model;
-using System.Security.Cryptography.X509Certificates;
 
 namespace AircraftParkingPlanning
 {
@@ -18,56 +17,65 @@ namespace AircraftParkingPlanning
 
     private void CreateFlights()
     {
-      Flights = new List<Flight>();
-      Flights.Add(new Flight
+      Flights = new List<Flight>
       {
-        Aircraft = Aircraft("PHNXT"),
-        StartDateTime = DateTime.Parse("1 Jan 2023 12:00"),
-        EndDateTime = DateTime.Parse("2 Jan 2023 08:00"),
-        ParkingSpot = ParkingSpot("N1")
-      });
-      Flights.Add(new Flight
-      {
-        Aircraft = Aircraft("9HLTT"),
-        StartDateTime = DateTime.Parse("1 Jan 2023 10:00"),
-        EndDateTime = DateTime.Parse("3 Jan 2023 12:00"),
-        ParkingSpot = ParkingSpot("N2")
-      });
-      Flights.Add(new Flight
-      {
-        Aircraft = Aircraft("YUPRJ"),
-        StartDateTime = DateTime.Parse("2 Jan 2023 08:30"),
-        EndDateTime = DateTime.Parse("3 Jan 2023 12:00"),
-        ParkingSpot = ParkingSpot("N1")
-      });
-      Flights.Add(new Flight
-      {
-        Aircraft = Aircraft("N123T"),
-        StartDateTime = DateTime.Parse("1 Jan 2023 14:30"),
-        EndDateTime = DateTime.Parse("1 Jan 2023 20:00"),
-        ParkingSpot = ParkingSpot("S1")
-      });
-      Flights.Add(new Flight
-      {
-        Aircraft = Aircraft("NCDFT"),
-        StartDateTime = DateTime.Parse("1 Jan 2023 09:30"),
-        EndDateTime = DateTime.Parse("4 Jan 2023 09:00"),
-        ParkingSpot = ParkingSpot("S2")
-      });
-      Flights.Add(new Flight
-      {
-        Aircraft = Aircraft("PHNXT"),
-        StartDateTime = DateTime.Parse("3 Jan 2023 13:00"),
-        EndDateTime = DateTime.Parse("4 Jan 2023 15:00"),
-        ParkingSpot = ParkingSpot("N1")
-      });
-      Flights.Add(new Flight
-      {
-        Aircraft = Aircraft("ERZ2"),
-        StartDateTime = DateTime.Parse("2 Jan 2023 09:30"),
-        EndDateTime = DateTime.Parse("3 Jan 2023 09:00"),
-        ParkingSpot = ParkingSpot("S3")
-      });
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("PHNXT"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 12:00"),
+          EndDateTime = DateTime.Parse("2 Jan 2023 08:00"),
+          ParkingSpot = ParkingSpot("N1")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("9HLTT"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 10:00"),
+          EndDateTime = DateTime.Parse("3 Jan 2023 12:00"),
+          ParkingSpot = ParkingSpot("N2")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("YUPRJ"),
+          StartDateTime = DateTime.Parse("2 Jan 2023 08:30"),
+          EndDateTime = DateTime.Parse("3 Jan 2023 12:00"),
+          ParkingSpot = ParkingSpot("N1")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("N123T"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 14:30"),
+          EndDateTime = DateTime.Parse("1 Jan 2023 20:00"),
+          ParkingSpot = ParkingSpot("S1")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("NCDFT"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 09:30"),
+          EndDateTime = DateTime.Parse("4 Jan 2023 09:00"),
+          ParkingSpot = ParkingSpot("S2")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("PHNXT"),
+          StartDateTime = DateTime.Parse("3 Jan 2023 13:00"),
+          EndDateTime = DateTime.Parse("4 Jan 2023 15:00"),
+          ParkingSpot = ParkingSpot("N1")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("ERZ2"),
+          StartDateTime = DateTime.Parse("2 Jan 2023 09:30"),
+          EndDateTime = DateTime.Parse("3 Jan 2023 09:00"),
+          ParkingSpot = ParkingSpot("S3")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("ERZ2"),
+          StartDateTime = DateTime.Parse("5 Jan 2023 09:30"),
+          EndDateTime = DateTime.Parse("5 Jan 2023 19:00"),
+          ParkingSpot = ParkingSpot("S3")
+        }
+      };
     }
 
     private void CreateAirport()
