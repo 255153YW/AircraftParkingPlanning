@@ -2,8 +2,9 @@
 {
   public class Aircraft
   {
-    public string RegistrationCode { get; set; }
+    public string? RegistrationCode { get; set; }
     public double FootprintSqm { get; set; }
+    public string? AircraftType { get; set; }
 
   }
 }

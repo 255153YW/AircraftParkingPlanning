@@ -28,6 +28,13 @@ namespace AircraftParkingPlanning
         },
         new Flight(Guid.NewGuid().ToString())
         {
+          Aircraft = Aircraft("PHNXT"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 12:00"),
+          EndDateTime = DateTime.Parse("2 Jan 2023 08:30"),
+          ParkingSpot = ParkingSpot("N1")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
           Aircraft = Aircraft("9HLTT"),
           StartDateTime = DateTime.Parse("1 Jan 2023 10:00"),
           EndDateTime = DateTime.Parse("3 Jan 2023 12:00"),
@@ -74,6 +81,34 @@ namespace AircraftParkingPlanning
           StartDateTime = DateTime.Parse("5 Jan 2023 09:30"),
           EndDateTime = DateTime.Parse("5 Jan 2023 19:00"),
           ParkingSpot = ParkingSpot("S3")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("ERZ2"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 23:30"),
+          EndDateTime = DateTime.Parse("2 Jan 2023 00:30"),
+          ParkingSpot = ParkingSpot("S3")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("ERZ2"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 00:30"),
+          EndDateTime = DateTime.Parse("1 Jan 2023 01:30"),
+          ParkingSpot = ParkingSpot("S3")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("ERZ1"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 00:00"),
+          EndDateTime = DateTime.Parse("1 Jan 2023 00:30"),
+          ParkingSpot = ParkingSpot("N3")
+        },
+        new Flight(Guid.NewGuid().ToString())
+        {
+          Aircraft = Aircraft("ERZ2"),
+          StartDateTime = DateTime.Parse("1 Jan 2023 00:30"),
+          EndDateTime = DateTime.Parse("1 Jan 2023 02:30"),
+          ParkingSpot = ParkingSpot("N3")
         }
       };
     }
@@ -121,15 +156,15 @@ namespace AircraftParkingPlanning
     {
       AircraftList = new List<Aircraft>
       {
-        new Aircraft {RegistrationCode = "PHNXT", FootprintSqm = 350 },
-        new Aircraft {RegistrationCode = "9HLTT", FootprintSqm = 600 },
-        new Aircraft {RegistrationCode = "YUPRJ", FootprintSqm = 420 },
-        new Aircraft {RegistrationCode = "N123T", FootprintSqm = 550},
-        new Aircraft {RegistrationCode = "NCDFT", FootprintSqm = 780 },
-        new Aircraft {RegistrationCode = "TTPB", FootprintSqm = 490 },
-        new Aircraft {RegistrationCode = "ZZZZ", FootprintSqm = 1000 },
-        new Aircraft {RegistrationCode = "ERZ1", FootprintSqm = 1000 },
-        new Aircraft {RegistrationCode = "ERZ2", FootprintSqm = 3000 },
+        new Aircraft {RegistrationCode = "PHNXT", FootprintSqm = 350, AircraftType = "Piper 350" },
+        new Aircraft {RegistrationCode = "9HLTT", FootprintSqm = 600, AircraftType = "Aero-600" },
+        new Aircraft {RegistrationCode = "YUPRJ", FootprintSqm = 420, AircraftType = "Super 420" },
+        new Aircraft {RegistrationCode = "N123T", FootprintSqm = 550, AircraftType = "G550"},
+        new Aircraft {RegistrationCode = "NCDFT", FootprintSqm = 780, AircraftType = "780 Special" },
+        new Aircraft {RegistrationCode = "TTPB", FootprintSqm = 490, AircraftType = "Type 490" },
+        new Aircraft {RegistrationCode = "ZZZZ", FootprintSqm = 1000, AircraftType = "Type 1000" },
+        new Aircraft {RegistrationCode = "ERZ1", FootprintSqm = 1000, AircraftType = "B1000" },
+        new Aircraft {RegistrationCode = "ERZ2", FootprintSqm = 3000, AircraftType = "A3000-MAX" },
       };
     }
 
