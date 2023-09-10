@@ -1,4 +1,5 @@
 ﻿using AircraftParkingPlanning.Model;
+using System.Xml.Linq;
 
 namespace AircraftParkingPlanning
 {
@@ -122,12 +123,12 @@ namespace AircraftParkingPlanning
           Name = "North",
           ParkingSpots = new List<ParkingSpot>
           {
-            new ParkingSpot { Name = "N1", FootprintSqm = 700 },
-            new ParkingSpot { Name = "N2", FootprintSqm = 700 },
-            new ParkingSpot { Name = "N3", FootprintSqm = 1400 },
-            new ParkingSpot { Name = "N4", FootprintSqm = 1000 },
-            new ParkingSpot { Name = "N5", FootprintSqm = 1000 },
-            new ParkingSpot { Name = "N6", FootprintSqm = 1500 },
+            new ParkingSpot("N1",700),
+            new ParkingSpot("N2", 700),
+            new ParkingSpot("N2", 1400),
+            new ParkingSpot("N4", 1000),
+            new ParkingSpot("N5", 1000),
+            new ParkingSpot("N6", 1500),
           }
         },
         new ParkingArea
@@ -135,13 +136,13 @@ namespace AircraftParkingPlanning
           Name = "South",
           ParkingSpots = new List<ParkingSpot>
           {
-            new ParkingSpot { Name = "S1", FootprintSqm = 700 },
-            new ParkingSpot { Name = "S2", FootprintSqm = 700 },
-            new ParkingSpot { Name = "S3", FootprintSqm = 1400 },
-            new ParkingSpot { Name = "S4", FootprintSqm = 1000 },
-            new ParkingSpot { Name = "S5", FootprintSqm = 1000 },
-            new ParkingSpot { Name = "S6", FootprintSqm = 1500 },
-            new ParkingSpot { Name = "S7", FootprintSqm = 4500 },
+            new ParkingSpot("S1", 700),
+            new ParkingSpot("S2", 700),
+            new ParkingSpot("S3", 1400),
+            new ParkingSpot("S4", 1000),
+            new ParkingSpot("S5", 1000),
+            new ParkingSpot("S6", 1500),
+            new ParkingSpot("S7", 4500),
           }
         },
       };

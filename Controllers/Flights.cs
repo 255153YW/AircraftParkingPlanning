@@ -21,6 +21,6 @@ namespace AircraftParkingPlanning.Controllers
     public List<Flight> Get()
     {
       return setup.Flights;
-    }  
+    }
   }
 }
