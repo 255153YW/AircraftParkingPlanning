@@ -27,7 +27,7 @@ namespace AircraftParkingPlanning.Controllers
     [HttpPost]
     public  ActionResult Post([FromBody]JsonObject newFlightJson)
     {
-      return Ok(newFlight);
+      return Ok(newFlightJson);
     }
   }
 }
