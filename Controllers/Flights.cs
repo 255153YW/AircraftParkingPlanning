@@ -1,5 +1,6 @@
 using AircraftParkingPlanning.Model;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Nodes;
 
 namespace AircraftParkingPlanning.Controllers
 {
@@ -21,6 +22,12 @@ namespace AircraftParkingPlanning.Controllers
     public List<Flight> Get()
     {
       return setup.Flights;
+    }
+
+    [HttpPost]
+    public  ActionResult Post([FromBody]JsonObject newFlightJson)
+    {
+      return Ok(newFlight);
     }
   }
 }

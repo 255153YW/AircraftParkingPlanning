@@ -125,7 +125,7 @@ namespace AircraftParkingPlanning
           {
             new ParkingSpot("N1",700),
             new ParkingSpot("N2", 700),
-            new ParkingSpot("N2", 1400),
+            new ParkingSpot("N3", 1400),
             new ParkingSpot("N4", 1000),
             new ParkingSpot("N5", 1000),
             new ParkingSpot("N6", 1500),
@@ -172,6 +172,11 @@ namespace AircraftParkingPlanning
     private Aircraft Aircraft(string registrationCode)
     {
       return AircraftList.Single(a => a.RegistrationCode == registrationCode);
+    }
+
+    public void addFlight(Flight newFlight)
+    {
+      this.Flights.Add(newFlight);
     }
   }
 }

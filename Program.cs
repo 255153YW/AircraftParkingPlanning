@@ -1,4 +1,5 @@
 using AircraftParkingPlanning;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +27,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseCors(options =>
 {
-  options.WithOrigins("http://localhost:3000");
+  options.WithOrigins("http://localhost:3000")
+    .WithMethods(HttpMethods.Get)
+    .WithMethods(HttpMethods.Post)
+    .WithExposedHeaders(HeaderNames.ContentType)
+    .WithHeaders(HeaderNames.ContentType);
 });
 app.MapControllers();
 
