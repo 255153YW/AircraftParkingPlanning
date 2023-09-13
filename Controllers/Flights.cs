@@ -1,6 +1,8 @@
 using AircraftParkingPlanning.Model;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace AircraftParkingPlanning.Controllers
 {
@@ -25,9 +27,17 @@ namespace AircraftParkingPlanning.Controllers
     }
 
     [HttpPost]
-    public  ActionResult Post([FromBody]JsonObject newFlightJson)
+    public ActionResult Post([FromBody] Flight newFlightValues)
     {
-      return Ok(newFlightJson);
+      if (newFlightValues != null)
+      {
+        if(newFlightValues.Aircraft != null && newFlightValues.ParkingSpot != null)
+        {
+          setup.AircraftList.Add(newFlightValues.Aircraft);
+          setup.addFlight(newFlightValues);
+        }
+      }
+      return Ok();
     }
   }
 }
