@@ -39,5 +39,12 @@ namespace AircraftParkingPlanning.Controllers
       }
       return Ok();
     }
+
+    [HttpDelete]
+    public ActionResult Delete(string flightId)
+    {
+      setup.removeFlight(flightId);
+      return Ok();
+    }
   }
 }

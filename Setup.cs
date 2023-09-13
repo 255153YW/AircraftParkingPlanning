@@ -1,4 +1,5 @@
 ﻿using AircraftParkingPlanning.Model;
+using System.IO;
 using System.Xml.Linq;
 
 namespace AircraftParkingPlanning
@@ -177,6 +178,16 @@ namespace AircraftParkingPlanning
     public void addFlight(Flight newFlight)
     {
       this.Flights.Add(newFlight);
+    }
+
+    public void removeFlight(string flightIdToRemove)
+    {
+      int flightIndexToDelete = this.Flights.FindIndex(flight => flight.Id.Contains(flightIdToRemove));
+      if(flightIndexToDelete >= 0)
+      {
+        this.Flights.RemoveAt(flightIndexToDelete);
+      }
+      
     }
   }
 }
