@@ -31,7 +31,8 @@ app.UseCors(options =>
     .WithMethods(HttpMethods.Get)
     .WithMethods(HttpMethods.Post)
     .WithExposedHeaders(HeaderNames.ContentType)
-    .WithHeaders(HeaderNames.ContentType);
+    .WithHeaders(HeaderNames.ContentType)
+    .WithMethods(HttpMethods.Delete);
 });
 app.MapControllers();
 

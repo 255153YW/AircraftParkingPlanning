@@ -27,23 +27,64 @@ namespace AircraftParkingPlanning.Controllers
     }
 
     [HttpPost]
-    public ActionResult Post([FromBody] Flight newFlightValues)
+    public ActionResult Post([FromBody] Flight incomingFlightValues)
     {
-      if (newFlightValues != null)
+      if (incomingFlightValues != null)
       {
-        if(newFlightValues.Aircraft != null && newFlightValues.ParkingSpot != null)
+        if(incomingFlightValues.Aircraft != null && incomingFlightValues.ParkingSpot != null)
         {
-          setup.AircraftList.Add(newFlightValues.Aircraft);
-          setup.addFlight(newFlightValues);
+          string? registrationCode = incomingFlightValues.Aircraft.RegistrationCode;
+          
+          if (registrationCode != null) {
+            Aircraft? existingAircraft = setup.getAircraftByRegistration(registrationCode);
+            if(existingAircraft != null)
+            {
+              existingAircraft.AircraftType = incomingFlightValues.Aircraft.AircraftType;
+              existingAircraft.FootprintSqm = incomingFlightValues.Aircraft.FootprintSqm;
+            }
+            else
+            {
+              setup.AircraftList.Add(incomingFlightValues.Aircraft);
+            }
+          }
+          else
+          {
+            setup.AircraftList.Add(incomingFlightValues.Aircraft);
+          }
+
+          Flight? existingFlight = setup.getFlightById(incomingFlightValues.Id);
+          if ( existingFlight != null)
+          {
+            existingFlight.Aircraft = incomingFlightValues.Aircraft;
+            existingFlight.StartDateTime = incomingFlightValues.StartDateTime;
+            existingFlight.EndDateTime = incomingFlightValues.EndDateTime;
+            existingFlight.ParkingSpot = incomingFlightValues.ParkingSpot;
+          }
+          else
+          {
+            Flight newFlight = new Flight(Guid.NewGuid().ToString())
+            {
+              Aircraft = incomingFlightValues.Aircraft,
+              StartDateTime = incomingFlightValues.StartDateTime,
+              EndDateTime = incomingFlightValues.EndDateTime,
+              ParkingSpot = incomingFlightValues.ParkingSpot
+            };
+            setup.addFlight(newFlight);
+          }
+            
         }
       }
       return Ok();
     }
 
-    [HttpDelete]
-    public ActionResult Delete(string flightId)
+    [HttpDelete("{id}")]
+    public ActionResult Delete(string id)
     {
-      setup.removeFlight(flightId);
+      if (setup.getFlightById(id) != null)
+      {
+        setup.removeFlight(id);
+      }
+      
       return Ok();
     }
   }

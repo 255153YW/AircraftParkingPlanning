@@ -180,6 +180,16 @@ namespace AircraftParkingPlanning
       this.Flights.Add(newFlight);
     }
 
+    public Aircraft? getAircraftByRegistration(string registrationCode)
+    {
+      return AircraftList.SingleOrDefault(a => a.RegistrationCode == registrationCode);
+    }
+
+    public Flight? getFlightById(string id)
+    {
+      return Flights.SingleOrDefault(f => f.Id == id);
+    }
+
     public void removeFlight(string flightIdToRemove)
     {
       int flightIndexToDelete = this.Flights.FindIndex(flight => flight.Id.Contains(flightIdToRemove));
