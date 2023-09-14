@@ -1,8 +1,5 @@
 using AircraftParkingPlanning.Model;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
-using System.Text.Json.Nodes;
-using System.Text.Json.Serialization;
 
 namespace AircraftParkingPlanning.Controllers
 {
@@ -71,7 +68,6 @@ namespace AircraftParkingPlanning.Controllers
             };
             setup.addFlight(newFlight);
           }
-            
         }
       }
       return Ok();
